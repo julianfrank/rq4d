@@ -15,19 +15,19 @@ Its Simple if you have the following already Installed and in working condition
 ### Clone this repository
 
     git clone https://github.com/julianfrank/rq4d
-  
+
     cd rq4d
-    
-### Build the Container 
+
+### Build the Container
 
 This step would create the seed Instance that detects that it was the only container in the rdb network and hence spin up rqlite as seed
 
     docker-compose up --build -d rdb
-    
-Watch the log using 
+
+Watch the log using
 
     docker-compose logs -f
-    
+
 If you want to change the port addresses or other parameters then change the ENTRYPOINT parameter to use your custom parameter as below
 
     # ./rq4d --help
@@ -47,7 +47,7 @@ for example if you like the raft port to be 4040 instead of the default 4002 the
 
     ENTRYPOINT ["./rq4d","-raft",":4040"]
 
-Once happy with build in future you can startup the seed just using the regular 
+Once happy with build in future you can startup the seed just using the regular
 
     docker-compose up -d rdb
 
@@ -56,7 +56,7 @@ Once happy with build in future you can startup the seed just using the regular
 This is where this wrapper makes life easier ... If you want 5 Instances use the following
 
     docker-compose scale rdb=5
-    
+
 ## Known Issues
 
 - The DB Directory does not work with Volumes that directly end up in the host disk. If you use a Volume 'Container' then this problem does not showup...

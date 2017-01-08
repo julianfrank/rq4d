@@ -27,7 +27,7 @@ func main() {
 	//rdbAdvHTTPPort = flag.String("httpadv", ":4001", "Port for use with the advhttp parameter")
 	rdbRAFTPort = flag.String("raft", ":4002", "Port for use with the raft parameter")
 	//rdbAdvRAFTPort = flag.String("raftadv", ":4002", "Port for use with the advraft parameter")
-	rdbExecutable = flag.String("exec", "./rqlite/rqlited", "Executable as applicable in your Container environment")
+	rdbExecutable = flag.String("exec", "/usr/local/bin/rqlite", "Executable as applicable in your Container environment")
 	rdbDBdir = flag.String("db", "/db", "DB Directory as applicable in your Container environment")
 	flag.Parse()
 
