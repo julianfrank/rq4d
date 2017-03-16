@@ -10,5 +10,5 @@ RUN ["mv","rqlited-v3.9.1-linux-amd64","rqlite"]
 # copy my app to go src folder and compile
 ADD / /go/src
 RUN ["go","build","/go/src/rq4d.go"]
-
+# Modify this line as per specific to your environment
 ENTRYPOINT ["./rq4d"]
